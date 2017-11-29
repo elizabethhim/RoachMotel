@@ -3,6 +3,8 @@
             which is a room amenity available for purchase
  */
 
+//TODO: ensure AutoRefill can only be purchased if FoodBar has been purchased
+
 public class AutoRefill extends RoomAmenities {
     //type of room
     protected MotelRoom roomType;
