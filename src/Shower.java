@@ -21,7 +21,7 @@ public class Shower extends RoomAmenities {
      * @return description of room with a spray-resistant shower
      */
     public String getDescription() {
-        return roomType.getDescription() + "with a spray-resistant shower";
+        return roomType.getDescription() + " with a spray-resistant shower";
     }
 
     /** return cost of room with a spray-resistant shower

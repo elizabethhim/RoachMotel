@@ -9,7 +9,7 @@ public class BasicRoom extends MotelRoom{
 
     /**default constructor of a basic room*/
     public BasicRoom() {
-        description = "Basic Room";
+        description = "Room";
     }
 
     /**return cost of a room
