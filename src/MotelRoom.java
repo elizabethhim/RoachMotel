@@ -1,3 +1,7 @@
+/* Authors: Ricardo Alcaraz, Jacob Olson, Elizabeth Him
+   Purpose: this abstract superclass represents a MotelRoom in our RoachMotel
+ */
+
 public abstract class MotelRoom {
     //a description of the room
     protected String description;

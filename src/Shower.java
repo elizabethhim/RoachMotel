@@ -1,3 +1,8 @@
+/* Authors: Ricardo Alcaraz, Jacob Olson, Elizabeth Him
+   Purpose: this class represents a spray-resistant shower,
+            which is a room amenity available for purchase
+ */
+
 public class Shower extends RoomAmenities {
     //type of room
     protected MotelRoom roomType;

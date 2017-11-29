@@ -1,3 +1,8 @@
+/* Authors: Ricardo Alcaraz, Jacob Olson, Elizabeth Him
+   Purpose: this class represents a BasicRoom in our RoachMotel,
+            which is a type of MotelRoom
+ */
+
 public class BasicRoom extends MotelRoom{
     //cost of a basic room
     public static final double COST = 50;
