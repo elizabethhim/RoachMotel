@@ -4,10 +4,10 @@
  */
 
 public class FoodBar extends RoomAmenities {
-    //type of room
+    /**type of room*/
     protected MotelRoom roomType;
 
-    //cost of a food bar
+    /**cost of a food bar*/
     public static final double COST = 10;
 
     /**add a food bar to a room

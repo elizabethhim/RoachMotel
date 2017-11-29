@@ -6,10 +6,10 @@
 //TODO: ensure AutoRefill can only be purchased if FoodBar has been purchased
 
 public class AutoRefill extends RoomAmenities {
-    //type of room
+    /**type of room*/
     protected MotelRoom roomType;
 
-    //cost of a automatically refilled food bar
+    /**cost of a automatically refilled food bar*/
     public static final double COST = 5;
 
     /**add a food bar to a room
@@ -19,7 +19,7 @@ public class AutoRefill extends RoomAmenities {
         this.roomType = roomType;
     }
 
-    /** return description of room with an automatically refilled food bar
+    /**return description of room with an automatically refilled food bar
      * @return description of room with an automatically refilled food bar
      */
     public String getDescription() {

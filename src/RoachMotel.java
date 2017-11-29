@@ -6,13 +6,13 @@
 //TODO: add methods, if necessary
 
 public class RoachMotel {
-    //an instance of Roach Motel
+    /**an instance of Roach Motel*/
     private static RoachMotel motel;
 
-    //room capacity of Roach Motel
+    /**room capacity of Roach Motel*/
     private int capacity;
 
-    //vacancy condition of Roach Motel
+    /**vacancy condition of Roach Motel*/
     private boolean vacancy;
 
     /**private constructor of a motel to prevent new motel creation

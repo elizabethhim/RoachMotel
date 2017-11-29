@@ -4,7 +4,7 @@
  */
 
 public class BasicRoom extends MotelRoom{
-    //cost of a basic room
+    /**cost of a basic room*/
     public static final double COST = 50;
 
     /**default constructor of a basic room*/

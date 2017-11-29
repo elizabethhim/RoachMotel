@@ -4,13 +4,13 @@
 
 public class RoachColony {
 
-    //name of the Roach Colony
+    /**name of the Roach Colony*/
     private String name;
 
-    //number of roaches in the Roach Colony
+    /**number of roaches in the Roach Colony*/
     private int population;
 
-    //growth rate of the Roach Colony
+    /**growth rate of the Roach Colony*/
     private double growthRate;
 
     /** return name of Roach Colony
