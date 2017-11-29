@@ -1,6 +1,6 @@
 /* Authors: Ricardo Alcaraz, Jacob Olson, Elizabeth Him
-   Purpose: this class represents a BasicRoom in our RoachMotel,
-            which is a type of MotelRoom
+   Purpose: this class represents a Basic Room in our Roach Motel,
+            which is a type of Motel Room
  */
 
 public class BasicRoom extends MotelRoom{

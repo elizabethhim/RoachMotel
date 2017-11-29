@@ -1,5 +1,5 @@
 /* Authors: Ricardo Alcaraz, Jacob Olson, Elizabeth Him
-   Purpose: this abstract superclass represents a MotelRoom in our RoachMotel
+   Purpose: this abstract superclass represents a Motel Room in our Roach Motel
  */
 
 public abstract class MotelRoom {
