@@ -13,45 +13,52 @@ public class RoachColony {
     /**growth rate of the Roach Colony*/
     private double growthRate;
 
-    /** return name of Roach Colony
+    /**return name of Roach Colony
      * @return name of Roach Colony
      */
     public String getName() {
         return name;
     }
 
-    /** set name of Roach Colony
+    /**set name of Roach Colony
      * @param name new name of Roach Colony
      */
     public void setName(String name) {
         this.name = name;
     }
 
-    /** return population of Roach Colony
+    /**return population of Roach Colony
      * @return population of Roach Colony
      */
     public int getPopulation() {
         return population;
     }
 
-    /** set population of Roach Colony
+    /**set population of Roach Colony
      * @param population new population of Roach Colony
      */
     public void setPopulation(int population) {
         this.population = population;
     }
 
-    /** return growth rate of Roach Colony
+    /**return growth rate of Roach Colony
      * @return growth rate of Roach Colony
      */
     public double getGrowthRate() {
         return growthRate;
     }
 
-    /** set growth rate of Roach Colony
+    /**set growth rate of Roach Colony
      * @param growthRate new growth rate of Roach Colony
      */
     public void setGrowthRate(double growthRate) {
         this.growthRate = growthRate;
+    }
+
+    /**Roach Colony throws a party
+     * increases population by growth rate
+     */
+    public void throwParty() {
+        this.population = (int) (population * growthRate);
     }
 }
