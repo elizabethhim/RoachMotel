@@ -23,7 +23,7 @@ public class AutoRefill extends RoomAmenities {
      * @return description of room with an automatically refilled food bar
      */
     public String getDescription() {
-        return roomType.getDescription() + " with an automatically refilled food bar";
+        return roomType.getDescription() + " that is automatically refilled";
     }
 
     /** return cost of room with food bar
