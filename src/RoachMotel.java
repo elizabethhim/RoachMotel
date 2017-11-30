@@ -64,5 +64,4 @@ public class RoachMotel {
     public void setVacancy(boolean vacancy) {
         this.vacancy = vacancy;
     }
- 
 }
