@@ -1,4 +1,4 @@
-/* Authors: Ricardo Alcaraz, Jacob Olson, Elizabeth Him
+/* Authors: Ricardo Alcaraz, Jacob Olsøn, Elizabeth Him
    Purpose: this abstract superclass represents room amenities
             available for purchase at our Roach Motel,
             which extends Motel Room

@@ -1,4 +1,4 @@
-/* Authors: Ricardo Alcaraz, Jacob Olson, Elizabeth Him
+/* Authors: Ricardo Alcaraz, Jacob Olsøn, Elizabeth Him
    Purpose: this class represents a Roach Motel
             and uses the Singleton Design Pattern to limit motel creation
  */
@@ -64,19 +64,5 @@ public class RoachMotel {
     public void setVacancy(boolean vacancy) {
         this.vacancy = vacancy;
     }
-
-    /**Set a room to a roach colony
-     * @param room number
-     * @param guest RoachColony that wants to stay
-     */
-    public void setRoom( int room, RoachColony guest) {
-        rooms.put(room, guest);
-    }
-
-    /**Clear a roach colony from a room
-     * @param roomNumber to clear from motel
-     */
-    public void clearRoom( int roomNumber ) {
-        rooms.remove( roomNumber );
-    }
+ 
 }
