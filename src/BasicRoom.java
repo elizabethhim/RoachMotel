@@ -1,4 +1,4 @@
-/* Authors: Ricardo Alcaraz, Jacob Olson, Elizabeth Him
+/* Authors: Ricardo Alcaraz, Jacob Olsøn, Elizabeth Him
    Purpose: this class represents a Basic Room in our Roach Motel,
             which is a type of Motel Room
  */

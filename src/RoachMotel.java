@@ -1,4 +1,4 @@
-/* Authors: Ricardo Alcaraz, Jacob Olson, Elizabeth Him
+/* Authors: Ricardo Alcaraz, Jacob Olsøn, Elizabeth Him
    Purpose: this class represents a Roach Motel
             and uses the Singleton Design Pattern to limit motel creation
  */
