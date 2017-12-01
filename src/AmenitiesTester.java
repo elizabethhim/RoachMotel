@@ -22,6 +22,7 @@ public class AmenitiesTester {
             room2 = AmenitiesFactory.getAmenity("shower", room2);
             room2 = AmenitiesFactory.getAmenity("spa", room2);
             System.out.println(room2.getDescription());
+            System.out.println(room2.getGuest());
             System.out.println("$" + room2.cost() + "\n\n");
         } catch (InvalidAmenityException ex) {
             ex.printStackTrace();

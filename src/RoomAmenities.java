@@ -10,4 +10,8 @@ public abstract class RoomAmenities extends MotelRoom{
 
     /**Room held by the Amenity*/
     protected MotelRoom roomType;
+
+    public RoachColony getGuest() {
+        return roomType.getGuest();
+    }
 }

@@ -19,7 +19,7 @@ public abstract class MotelRoom {
     /**Return guest staying in the room
      * @return guest object
      */
-    public Object getGuest() {
+    public RoachColony getGuest() {
         return guest;
     }
 
