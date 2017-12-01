@@ -16,7 +16,7 @@ public class RoachMotel {
     private boolean vacancy;
 
     /**List of Roach colonies*/
-    private HashMap<Integer, RoachColony> rooms;
+    private HashMap<Integer, MotelRoom> rooms;
 
     /**private constructor of a motel to prevent new motel creation
      * initial capacity set at five rooms
@@ -24,7 +24,7 @@ public class RoachMotel {
     private RoachMotel() {
         capacity = 5;
         vacancy = true;
-        rooms = new HashMap<Integer, RoachColony>();
+        rooms = new HashMap<Integer, MotelRoom>();
     }
 
     /**creates new instances of a Roach Motel

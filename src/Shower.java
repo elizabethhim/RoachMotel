@@ -4,9 +4,6 @@
  */
 
 public class Shower extends RoomAmenities {
-    /**type of room*/
-    protected MotelRoom roomType;
-
     /**cost of a spray-resistant shower*/
     public static final double COST = 25;
 

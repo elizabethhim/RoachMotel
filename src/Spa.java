@@ -4,9 +4,6 @@
  */
 
 public class Spa extends RoomAmenities {
-    /**type of room*/
-    protected MotelRoom roomType;
-
     /**cost of a spa*/
     public static final double COST = 20;
 

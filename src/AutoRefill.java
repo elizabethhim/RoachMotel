@@ -6,9 +6,6 @@
 //TODO: ensure AutoRefill can only be purchased if FoodBar has been purchased
 
 public class AutoRefill extends RoomAmenities {
-    /**type of room*/
-    protected MotelRoom roomType;
-
     /**cost of a automatically refilled food bar*/
     public static final double COST = 5;
 

@@ -72,4 +72,12 @@ public class RoachColony {
     public void throwParty() {
         this.population = (int) (population * growthRate);
     }
+
+    /**Overriding toString function
+     * @return description of colony
+     */
+    @Override
+    public String toString() {
+        return "Colony " + this.name + "\nPopulation: " + this.population + "\nGrowth Rate: " + this.growthRate;
+    }
 }
