@@ -8,7 +8,7 @@ public class WaitList implements Observer {
     private static RoachMotel m;
 
     /**Queue holding RoachColonies in WaitList*/
-    private PriorityQueue<RoachColony> waitlist;
+    private PriorityQueue<MotelRoom> waitlist;
 
     /**
      * Private constructor to prevent multiple WaitLists
@@ -31,7 +31,7 @@ public class WaitList implements Observer {
      * Adds a RoachColony to the WaitList
      * @param in the RoachColony being added to the WaitList
      */
-    public void add(RoachColony in) {
+    public void add(MotelRoom in) {
         waitlist.add(in);
     }
 

@@ -17,7 +17,7 @@ public class RoachMotel implements Subject {
     private boolean vacancy;
 
     /**List of Roach colonies*/
-    private HashMap<Integer, RoachColony> rooms;
+    private HashMap<Integer, MotelRoom> rooms;
 
     /**WaitList if no vacancy*/
     private WaitList list;
@@ -41,6 +41,7 @@ public class RoachMotel implements Subject {
         list = WaitList.getList();
         register(list);
         observers = new ArrayList<>();
+        rooms = new HashMap<>();
     }
 
     /**creates new instances of a Roach Motel
@@ -57,7 +58,7 @@ public class RoachMotel implements Subject {
      * Places a RoachColony into the next available room or adds to WaitList if no room is available
      * @param in the RoachColony being admitted to the room or added to WaitList
      */
-    public void admitRoom(RoachColony in) {
+    public void admitRoom(MotelRoom in) {
         if (vacancy) rooms.put(rooms.size(), in);
         else list.add(in);
         setVacancy(rooms.size() != capacity);

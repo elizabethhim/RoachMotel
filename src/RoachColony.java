@@ -13,6 +13,17 @@ public class RoachColony {
     /**growth rate of the Roach Colony*/
     private double growthRate;
 
+    /**Explicit Constructor for the Roach Colony
+     * @param name
+     * @param population
+     * @param growthRate
+     */
+    public RoachColony(String name, int population, double growthRate) {
+        this.name = name;
+        this.population = population;
+        this.growthRate = growthRate;
+    }
+
     /**return name of Roach Colony
      * @return name of Roach Colony
      */
@@ -60,5 +71,13 @@ public class RoachColony {
      */
     public void throwParty() {
         this.population = (int) (population * growthRate);
+    }
+
+    /**Overriding toString function
+     * @return description of colony
+     */
+    @Override
+    public String toString() {
+        return "Colony " + this.name + "\nPopulation: " + this.population + "\nGrowth Rate: " + this.growthRate;
     }
 }
