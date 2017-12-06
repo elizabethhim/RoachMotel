@@ -7,8 +7,14 @@ public class BasicRoom extends MotelRoom{
     /**cost of a basic room*/
     public static final double COST = 50;
 
-    /**default constructor of a basic room*/
+    /**Default Contructor for this room*/
     public BasicRoom() {
+        this.guest = null;
+        description = "Room";
+    }
+
+    public BasicRoom(RoachColony guest) {
+        this.guest = guest;
         description = "Room";
     }
 
@@ -18,4 +24,6 @@ public class BasicRoom extends MotelRoom{
     public double cost() {
         return COST;
     }
+
+
 }
