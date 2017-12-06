@@ -39,6 +39,7 @@ public class RoachMotel implements Subject {
         vacancy = true;
         rooms = new HashMap<>();
         list = WaitList.getList();
+        register(list);
         observers = new ArrayList<>();
     }
 
