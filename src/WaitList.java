@@ -20,7 +20,6 @@ public class WaitList implements Observer {
      */
     private WaitList() {
         waitlist = new PriorityQueue<>();
-        m = RoachMotel.getMotel();
     }
 
     /**
@@ -46,5 +45,14 @@ public class WaitList implements Observer {
     @Override
     public void update() {
         if (m.getVacancy()) m.admitRoom(waitlist.remove());
+    }
+
+    /**
+     * Get instance of the observer's subject
+     * @param sub the subject of the observer
+     */
+    @Override
+    public void setSubject(Subject sub) {
+        this.m = (RoachMotel)sub;
     }
 }
