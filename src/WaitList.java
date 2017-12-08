@@ -1,3 +1,8 @@
+/* Authors: Ricardo Alcaraz, Jacob Olsøn, Elizabeth Him
+   Purpose: this class represents a Wait List for the
+            Roach Motel and observes the vacancy status
+            to fill in empty rooms
+ */
 import java.util.PriorityQueue;
 
 public class WaitList implements Observer {

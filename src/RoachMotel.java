@@ -20,7 +20,7 @@ public class RoachMotel implements Subject {
     private HashMap<Integer, MotelRoom> rooms;
 
     /**WaitList if no vacancy*/
-    private WaitList list;
+    private static WaitList list;
 
     /**List of observers*/
     private ArrayList<Observer> observers;
@@ -62,6 +62,20 @@ public class RoachMotel implements Subject {
         if (vacancy) rooms.put(rooms.size(), in);
         else list.add(in);
         setVacancy(rooms.size() != capacity);
+    }
+
+    /*TEMPORARY METHOD FOR TESTING OBSERVER*/
+    public void removeRoom() {
+        rooms.remove(5);
+    } // END TEMP
+
+    /**
+     * Returns room at given key
+     * @param key the key of the room to return
+     * @return room at given key
+     */
+    public MotelRoom getRoom(int key) {
+        return rooms.get(key);
     }
 
     /**return capacity of Roach Motel
