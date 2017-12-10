@@ -41,11 +41,11 @@ public class AmenitiesTester {
         motel.admitRoom(room5);
         motel.admitRoom(room6);
         for (int i = 0; i < motel.getCapacity(); i++) {
-            System.out.println(motel.getRoom(i));
+            System.out.println(motel.getRoom(i).getDescription());
         }
         motel.removeRoom();
         for (int i = 0; i < motel.getCapacity(); i++) {
-            System.out.println(motel.getRoom(i));
+            System.out.println(motel.getRoom(i).getDescription());
         }
     }
 }

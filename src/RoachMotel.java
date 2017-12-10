@@ -39,9 +39,9 @@ public class RoachMotel implements Subject {
         vacancy = true;
         rooms = new HashMap<>();
         list = WaitList.getList();
+        observers = new ArrayList<>();
         register(list);
         list.setSubject(this);
-        observers = new ArrayList<>();
         rooms = new HashMap<>();
     }
 
@@ -67,7 +67,8 @@ public class RoachMotel implements Subject {
 
     /*TEMPORARY METHOD FOR TESTING OBSERVER*/
     public void removeRoom() {
-        rooms.remove(5);
+        rooms.remove(4);
+        setVacancy(rooms.size() != capacity);
     } // END TEMP
 
     /**
