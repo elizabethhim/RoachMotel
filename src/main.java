@@ -18,12 +18,12 @@ public class main {
             System.out.println(randomizer.getRandomRoom().getDescription());
         }
         RoachMotel motel = RoachMotel.getMotel();
-        RoachMotelMenu.initialMenu();
-        int user_input = RoachMotelMenu.mainMenu();
+        int user_input = RoachMotelMenu.initialMenu();
         while(user_input == 1) {
             user_input = RoachMotelMenu.mainMenu();
             motel.admitRoom(randomizer.getRandomRoom());
             System.out.println(motel.getOccupancy());
+            System.out.flush();
         }
 
     }
