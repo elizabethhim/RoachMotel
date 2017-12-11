@@ -4,6 +4,7 @@ import java.io.*;
 /* Authors: Ricardo Alcaraz, Jacob Olsøn, Elizabeth Him
    Purpose: This class creates random inputs for our roach motel main program
  */
+
 public class RoachMotelRandomizer {
 
     /**Holds a list of names to use in our randomizer*/
