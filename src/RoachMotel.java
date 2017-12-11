@@ -42,7 +42,6 @@ public class RoachMotel implements Subject {
         observers = new ArrayList<>();
         register(list);
         list.setSubject(this);
-        rooms = new HashMap<>();
     }
 
     /**creates new instances of a Roach Motel
