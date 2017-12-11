@@ -27,5 +27,25 @@ public class AmenitiesTester {
         } catch (InvalidAmenityException ex) {
             ex.printStackTrace();
         }
+
+        /*OBSERVER TEST*/
+        RoachMotel motel = RoachMotel.getMotel();
+        MotelRoom room3 = room2;
+        MotelRoom room4 = room2;
+        MotelRoom room5 = room2;
+        MotelRoom room6 = room1;
+        motel.admitRoom(room1);
+        motel.admitRoom(room2);
+        motel.admitRoom(room3);
+        motel.admitRoom(room4);
+        motel.admitRoom(room5);
+        motel.admitRoom(room6);
+        for (int i = 0; i < motel.getCapacity(); i++) {
+            System.out.println(motel.getRoom(i).getDescription());
+        }
+        motel.removeRoom();
+        for (int i = 0; i < motel.getCapacity(); i++) {
+            System.out.println(motel.getRoom(i).getDescription());
+        }
     }
 }
