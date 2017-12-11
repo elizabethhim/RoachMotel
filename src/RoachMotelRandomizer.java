@@ -65,6 +65,10 @@ public class RoachMotelRandomizer {
         return colonyList;
     }
 
+    /**Generate a random int from 0 to an upper limit
+     * @param high upper limit to return
+     * @return random int within the range specified
+     */
     public int getRandNum(int high) {
         return (int) (Math.random() * high);
     }
