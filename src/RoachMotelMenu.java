@@ -9,8 +9,10 @@ import java.util.Scanner;
 
 public class RoachMotelMenu {
 
+    /**String holding the initial menu choices*/
     private static String initialMenu = "1.Start\n2.Quit";
 
+    /*String holding the running program choices*/
     private static String programMenu = "1.Next Day\n2.Quit";
 
     /**Displays Vacancy sign on console output*/
@@ -31,6 +33,9 @@ public class RoachMotelMenu {
         System.out.println("");
     }
 
+    /**Display the initial menu for our program and grabs a user input
+     * @return user inputted number
+     */
     public static int initialMenu() {
         displaySign();
         System.out.println(initialMenu);
@@ -38,9 +43,23 @@ public class RoachMotelMenu {
         return userInput;
     }
 
+    /**Displays a no vacancy sign in the console output*/
+    public static void displayNoVacancy() {
+        ArrayList<String> noVacancySign = textReader("NoVacancySign.txt");
+        for( int i = 0; i < noVacancySign.size(); i++){
+            System.out.println(noVacancySign.get(i));
+        }
+        System.out.println("");
+    }
+
+    /**Display the main menu for our program and grabs a user input
+     * @return user inputted number
+     */
     public static int mainMenu() {
         if(RoachMotel.getMotel().isVacant()){
             displayVacancy();
+        } else {
+            displayNoVacancy();
         }
         System.out.println(programMenu);
         int user_input = inputValidation(1,2);
