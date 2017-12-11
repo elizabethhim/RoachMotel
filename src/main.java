@@ -10,10 +10,6 @@
 public class main {
 
     public static void main(String[] args) {
-        String main_menu = "1. Start Simulation\n" +
-                "2. quit";
-        String menu = "1. Next Day\n2. Quit";
-        System.out.println(menu);
         RoachMotelRandomizer randomizer = new RoachMotelRandomizer();
         for( int i = 0; i < 5; i++) {
             System.out.println( randomizer.getRandomRoachColony() );
@@ -23,6 +19,8 @@ public class main {
         }
         RoachMotelMenu.displayVacancy();
         RoachMotelMenu.displaySign();
+        int user_input = RoachMotelMenu.initialMenu();
+        RoachMotelMenu.mainMenu();
 
     }
 

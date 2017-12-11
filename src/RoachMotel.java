@@ -96,7 +96,7 @@ public class RoachMotel implements Subject {
     /**return vacancy condition of Roach Motel
      * @return vacancy condition of Roach Motel
      */
-    public boolean getVacancy() {
+    public boolean isVacant() {
         return vacancy;
     }
 
