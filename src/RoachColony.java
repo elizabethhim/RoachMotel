@@ -14,6 +14,7 @@ public class RoachColony {
     private double growthRate;
 
     /**Explicit Constructor for the Roach Colony
+     * Will round growth rate to two decimal places
      * @param name
      * @param population
      * @param growthRate
@@ -21,7 +22,7 @@ public class RoachColony {
     public RoachColony(String name, int population, double growthRate) {
         this.name = name;
         this.population = population;
-        this.growthRate = growthRate;
+        this.growthRate = (Math.round(growthRate * 100.0))/100.0;
     }
 
     /**return name of Roach Colony

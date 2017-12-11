@@ -8,7 +8,23 @@
  */
 
 public class main {
+
     public static void main(String[] args) {
-        System.out.println("Hello World");
+        String main_menu = "1. Start Simulation\n" +
+                "2. quit";
+        String menu = "1. Next Day\n2. Quit";
+        System.out.println(menu);
+        RoachMotelRandomizer randomizer = new RoachMotelRandomizer();
+        for( int i = 0; i < 5; i++) {
+            System.out.println( randomizer.getRandomRoachColony() );
+        }
+        for(int i = 0; i < 10; i++) {
+            System.out.println(randomizer.getRandomRoom().getDescription());
+        }
+
     }
+
+
+
 }
+
