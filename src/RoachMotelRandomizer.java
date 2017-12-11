@@ -53,6 +53,22 @@ public class RoachMotelRandomizer {
         return guest;
     }
 
+    /**Create a list of Roach Colonies with a random size
+     * @return roach colony list
+     */
+    public ArrayList<RoachColony> getRandomGuests() {
+        int randomNumberGuests = (int) (Math.random() * RoachMotel.getMotel().getCapacity());
+        ArrayList<RoachColony> colonyList = new ArrayList<>();
+        for(int i = 0; i < randomNumberGuests; i++) {
+            colonyList.add(getRandomRoachColony());
+        }
+        return colonyList;
+    }
+
+    public int getRandNum(int high) {
+        return (int) (Math.random() * high);
+    }
+
     /**Function to return a random motel room with random amenities
      * @return motelroom
      */

@@ -109,6 +109,12 @@ public class RoachMotel implements Subject {
         notifyObservers();
     }
 
+    /**return number of occupants currently staying
+     * @return number of occupants
+     */
+    public int getOccupancy() {
+        return rooms.size();
+    }
     /**
      * Registers observers to the subject
      * @param obj observer to be registered

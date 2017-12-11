@@ -17,10 +17,14 @@ public class main {
         for(int i = 0; i < 10; i++) {
             System.out.println(randomizer.getRandomRoom().getDescription());
         }
-        RoachMotelMenu.displayVacancy();
-        RoachMotelMenu.displaySign();
-        int user_input = RoachMotelMenu.initialMenu();
-        RoachMotelMenu.mainMenu();
+        RoachMotel motel = RoachMotel.getMotel();
+        RoachMotelMenu.initialMenu();
+        int user_input = RoachMotelMenu.mainMenu();
+        while(user_input == 1) {
+            user_input = RoachMotelMenu.mainMenu();
+            motel.admitRoom(randomizer.getRandomRoom());
+            System.out.println(motel.getOccupancy());
+        }
 
     }
 
