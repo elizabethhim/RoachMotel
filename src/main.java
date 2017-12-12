@@ -8,6 +8,7 @@
  */
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class main {
 
@@ -25,11 +26,7 @@ public class main {
             user_input = RoachMotelMenu.mainMenu();
             System.out.println();
             System.out.println("Day " + motel.getDays());
-            System.out.println();
-            admitAtRandom(randomizer.getRandNum(5));
-            System.out.println();
-            System.out.println("Motel currently has " + motel.getOccupancy() + " guests.");
-            System.out.println("Number in waitlist: " + motel.getWaitList().size());
+            randParties();
             motel.incrementDays();
             System.out.println();
 
@@ -64,11 +61,33 @@ public class main {
         }
     }
 
-    /**Takes in an integer list of guests that have decided to leave and checks them out from the motel
-     * Displays in console who has checked out
-     * @param guests
-     */
-    public static void checkoutAtRandom(ArrayList<Integer> guests) {
+
+    /**Chooses random rooms to throw parties*/
+    public static void randParties() {
+        int num = randomizer.getRandNum(5) + 1;
+        HashSet<Integer> numArray = new HashSet<Integer>();
+        for(int i = 0; i < num; i++) {
+            int temp = randomizer.getRandNum(5)+1;
+            numArray.add(temp);
+        }
+        for(int index: numArray) {
+            if(!motel.isRoomVacant(index)) {
+                int tempPop = motel.getRoom(index).getGuest().getPopulation();
+                MotelRoom room = motel.getRoom(index);
+                motel.getRoom(index).getGuest().throwParty();
+                System.out.println(motel.getRoom(index).getGuest().getName() + " has threw a party population grew from " + tempPop + " to " + motel.getRoom(index).getGuest().getPopulation());
+                tempPop = room.getGuest().getPopulation();
+                if(room.getDescription().contains("shower")){
+                    tempPop = (int) ((double) tempPop * .75);
+                    System.out.println("has shower");
+                } else {
+                    tempPop = (int) ((double) tempPop * .5);
+                    System.out.println("no shower");
+                }
+                room.getGuest().setPopulation(tempPop);
+                System.out.println("Motel has sprayed room " + index + motel.getRoom(index).getGuest().getName() + " population has fallen to " + motel.getRoom(index).getGuest().getPopulation());
+            }
+        }
 
     }
 
