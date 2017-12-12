@@ -80,7 +80,7 @@ public class RoachMotel implements Subject {
      * @param roomNum room number to check out
      */
     public void checkOut(int roomNum) {
-        System.out.println("Checking out Room " + roomNum + "!" + rooms.get(roomNum).getGuest().getName() + " pays Bill: $" + (rooms.get(roomNum).cost() * rooms.get(roomNum).getDays()));
+        System.out.println("Checking out Room " + roomNum + "! " + rooms.get(roomNum).getGuest().getName() + " pays Bill: $" + (rooms.get(roomNum).cost() * rooms.get(roomNum).getDays()));
         rooms.remove(roomNum);
         if (rooms.size() != capacity) {
             setVacancy(true);
