@@ -79,6 +79,6 @@ public class RoachColony {
      */
     @Override
     public String toString() {
-        return "Colony " + this.name + "\nPopulation: " + this.population + "\nGrowth Rate: " + this.growthRate;
+        return "Colony " + this.name + " Population: " + this.population + " with Growth Rate: " + this.growthRate;
     }
 }

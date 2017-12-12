@@ -17,7 +17,7 @@ public class RoachMotelRandomizer {
      * When initialized it will read in the names from a text file called names.txt
      */
     public RoachMotelRandomizer() {
-        names = textReader("names.txt");
+        names = textReaderNoSpace("names.txt");
         Collections.shuffle(names);
         amenities = textReader("amenities.txt");
     }
@@ -114,6 +114,23 @@ public class RoachMotelRandomizer {
         return list;
     }
 
+    /**Function to read in text from a file
+     * @param fileName
+     * @return ArrayList of Strings of each line of the text document
+     */
+    private ArrayList<String> textReaderNoSpace(String fileName) {
+        ArrayList<String> list = new ArrayList<String>();
+        try {
+            Scanner fileRead = new Scanner( new File(fileName) );
+            while(fileRead.hasNextLine()){
+                String temp = fileRead.nextLine();
+                list.add(temp.replaceAll("\\s+",""));
+            }
+        } catch(FileNotFoundException fnf) {
+            System.out.println( fnf.getStackTrace() );
+        }
+        return list;
+    }
 
 
 }
