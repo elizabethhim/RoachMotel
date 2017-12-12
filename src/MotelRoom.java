@@ -9,6 +9,12 @@ public abstract class MotelRoom {
     /**Guest staying in the room*/
     protected RoachColony guest;
 
+    /**number of days the guest will be staying*/
+    protected int days;
+
+    /**number of days until the guest checks out*/
+    int daysLeft = days;
+
     /**return description of room
      * @return description of room
      */
@@ -25,4 +31,11 @@ public abstract class MotelRoom {
 
     /**return total cost of the room*/
     public abstract double cost();
+
+    /**return number of days stayed*/
+    public int getDays() { return days; }
+
+    /**decrement days left*/
+    public void decrementDays() { daysLeft -= 1; }
+
 }
