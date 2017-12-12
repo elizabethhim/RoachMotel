@@ -3,7 +3,8 @@
             Roach Motel and observes the vacancy status
             to fill in empty rooms
  */
-import java.util.PriorityQueue;
+import java.util.AbstractQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 public class WaitList implements Observer {
     /**Instance of WaitList*/
@@ -13,13 +14,13 @@ public class WaitList implements Observer {
     private static RoachMotel m;
 
     /**Queue holding RoachColonies in WaitList*/
-    private PriorityQueue<MotelRoom> waitlist;
+    private LinkedBlockingQueue<MotelRoom> waitlist;
 
     /**
      * Private constructor to prevent multiple WaitLists
      */
     private WaitList() {
-        waitlist = new PriorityQueue<>();
+        waitlist = new LinkedBlockingQueue<>();
     }
 
     /**
