@@ -21,7 +21,7 @@ public class main {
         int user_input = RoachMotelMenu.initialMenu();
         while(user_input == 1) {
             user_input = RoachMotelMenu.mainMenu();
-            motel.admitRoom(randomizer.getRandomRoom());
+            motel.checkIn(randomizer.getRandomRoom());
             System.out.println(motel.getOccupancy());
             System.out.flush();
         }

@@ -4,6 +4,8 @@
  */
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.concurrent.LinkedBlockingQueue;
+
 //TODO: add methods, if necessary
 public class RoachMotel implements Subject {
 
@@ -58,10 +60,25 @@ public class RoachMotel implements Subject {
      * Places a RoachColony into the next available room or adds to WaitList if no room is available
      * @param in the RoachColony being admitted to the room or added to WaitList
      */
-    public void admitRoom(MotelRoom in) {
-        if (vacancy) rooms.put(rooms.size(), in);
+    public void checkIn(MotelRoom in) {
+        if (vacancy) {
+            for (int i = 1; i <= capacity; i++) {
+                if (!rooms.containsKey(i)) {
+                    rooms.put(i, in);
+                    break;
+                }
+            }
+        }
         else list.add(in);
         setVacancy(rooms.size() != capacity);
+    }
+
+    /**
+     * Returns the Motel's WaitList
+     * @return the Motel's WaitList
+     */
+    public LinkedBlockingQueue getWaitList() {
+        return list.getPhysicalList();
     }
 
     /*TEMPORARY METHOD FOR TESTING OBSERVER*/
