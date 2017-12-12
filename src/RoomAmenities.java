@@ -14,4 +14,14 @@ public abstract class RoomAmenities extends MotelRoom{
     public RoachColony getGuest() {
         return roomType.getGuest();
     }
+
+    /**return number of days stayed*/
+    public int getDays() { return roomType.getDays(); }
+
+    /**decrement days left*/
+    public void decrementDays() { roomType.decrementDays(); }
+
+    public int getDaysLeft() {
+        return roomType.getDaysLeft();
+    }
 }
