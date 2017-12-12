@@ -1,6 +1,6 @@
 public class AmenitiesTester {
     public static void main(String[] args) {
-        MotelRoom room1 = new BasicRoom(new RoachColony("Bob", 100, 1.10));
+        MotelRoom room1 = new BasicRoom(new RoachColony("Bob", 100, 1.10), 5);
         System.out.println(room1.getDescription());
         System.out.println("$" + room1.cost());
         System.out.println(room1.getGuest());
@@ -14,7 +14,7 @@ public class AmenitiesTester {
             ex.printStackTrace();
         }
 
-        MotelRoom room2 = new BasicRoom(new RoachColony("Lannister", 1200, 1.7));
+        MotelRoom room2 = new BasicRoom(new RoachColony("Lannister", 1200, 1.7), 5);
         System.out.println(room2.getDescription());
         System.out.println("$" + room2.cost());
 

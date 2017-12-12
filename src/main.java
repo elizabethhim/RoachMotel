@@ -24,26 +24,38 @@ public class main {
         while(user_input != 2) {
             user_input = RoachMotelMenu.mainMenu();
             admitAtRandom(randomizer.getRandNum(5));
-            System.out.println(motel.getOccupancy());
-            motel.incrementDays(1);
+            System.out.println("Motel currently has " + motel.getOccupancy() + " guests");
+            System.out.println("Day " + motel.getDays());
+            System.out.println(motel.getWaitList());
+            motel.incrementDays();
+
         }
 
     }
 
     /**Takes in a list of RoachColonies ready to be admitted to the motel
      * Displays in console who left as well
-     * @param guests
+     * @param num
      */
     public static void admitAtRandom(int num) {
-        for(int i = 0; i < num; i++) {
-            try {
-                Thread.sleep(1);
-                MotelRoom tempRoom = randomizer.getRandomRoom();
-                motel.checkIn(tempRoom);
-                System.out.println(tempRoom.getGuest().getName() + " has checked in to the hotel");
-            } catch (InterruptedException ie)
-            {
-                System.out.println("Scanning...");
+        if(num == 0){
+            System.out.println("No one checked in today");
+        } else {
+            for(int i = 0; i < num; i++) {
+                try {
+                    Thread.sleep(1000);
+                    MotelRoom tempRoom = randomizer.getRandomRoom();
+                    if(motel.isVacant()){
+                        motel.checkIn(tempRoom);
+                        System.out.println(tempRoom.getGuest().getName() + " has checked in to the hotel");
+                        System.out.println(tempRoom.getGuest().getName() + " has " + tempRoom.getDescription());
+                    } else {
+                        System.out.println("No rooms left " + tempRoom.getGuest().getName() + " has been added to waitlist");
+                    }
+                } catch (InterruptedException ie)
+                {
+                    System.out.println("Scanning...");
+                }
             }
         }
     }

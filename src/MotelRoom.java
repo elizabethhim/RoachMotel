@@ -38,4 +38,8 @@ public abstract class MotelRoom {
     /**decrement days left*/
     public void decrementDays() { daysLeft -= 1; }
 
+    public int getDaysLeft() {
+        return daysLeft;
+    }
+
 }

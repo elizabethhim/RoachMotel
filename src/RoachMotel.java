@@ -179,7 +179,7 @@ public class RoachMotel implements Subject {
      * @param roomNum room number to check out
      */
     public void checkOut(int roomNum) {
-        System.out.println("Checking out Room " + roomNum + "! Bill: $" + (rooms.get(roomNum).cost() * rooms.get(roomNum).getDays());
+        System.out.println("Checking out Room " + roomNum + "!" + rooms.get(roomNum).getGuest().getName() + " pays Bill: $" + (rooms.get(roomNum).cost() * rooms.get(roomNum).getDays()));
         rooms.remove(roomNum);
         if (rooms.size() != capacity) {
             setVacancy(true);
@@ -197,7 +197,14 @@ public class RoachMotel implements Subject {
             if (rooms.containsKey(i)) {
                 MotelRoom room = rooms.get(i);
                 room.decrementDays();
+                if(room.getDaysLeft() == 0){
+                    motel.checkOut(i);
+                }
             }
         }
+    }
+
+    public int getDays() {
+        return this.days;
     }
 }
