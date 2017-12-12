@@ -49,6 +49,7 @@ public class main {
                     if(motel.isVacant()){
                         System.out.println(tempRoom.getGuest().getName() + " has checked in to the hotel");
                         System.out.println(tempRoom.getGuest().getName() + " has " + tempRoom.getDescription());
+                        System.out.println("Staying for " + tempRoom.getDays());
                     } else {
                         System.out.println("No rooms left " + tempRoom.getGuest().getName() + " has been added to waitlist");
                     }

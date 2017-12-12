@@ -98,7 +98,7 @@ public class RoachMotel implements Subject {
             if (rooms.containsKey(i)) {
                 MotelRoom room = rooms.get(i);
                 room.decrementDays();
-                if(room.getDaysLeft() == 0){
+                if(room.getDaysLeft() <= 0){
                     motel.checkOut(i);
                 }
             }
