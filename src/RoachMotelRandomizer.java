@@ -93,6 +93,7 @@ public class RoachMotelRandomizer {
         int randNum = getRandNum(4) + 1;
         System.out.println(randNum);
         MotelRoom guest = new BasicRoom(getRandomRoachColony(), randNum );
+        System.out.println(guest.getDescription());
         return getRandomAmenities( guest );
     }
 

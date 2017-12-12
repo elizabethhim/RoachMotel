@@ -10,14 +10,14 @@ public class BasicRoom extends MotelRoom{
     /**Default Contructor for this room*/
     public BasicRoom() {
         this.guest = null;
-        description = "Room";
+        description = super.days + " day(s) in Room";
     }
 
     public BasicRoom(RoachColony guest, int days) {
         this.guest = guest;
-        description = "Room";
         super.days = days;
         super.daysLeft = days;
+        description = super.days + " day(s) in Room";
     }
 
     /**return cost of a room
