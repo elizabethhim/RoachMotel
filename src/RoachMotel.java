@@ -156,6 +156,14 @@ public class RoachMotel implements Subject {
         notifyObservers();
     }
 
+    /**Return boolean to see whether the room has a guest or not
+     * @param roomNum
+     * @return boolean
+     */
+    public boolean isRoomVacant(int roomNum) {
+        return !rooms.containsKey(roomNum);
+    }
+
     /**return number of occupants currently staying
      * @return number of occupants
      */
