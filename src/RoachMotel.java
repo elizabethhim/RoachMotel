@@ -76,6 +76,39 @@ public class RoachMotel implements Subject {
         setVacancy(rooms.size() != capacity);
     }
 
+    /**check out a room
+     * @param roomNum room number to check out
+     */
+    public void checkOut(int roomNum) {
+        System.out.println("Checking out Room " + roomNum + "! " + rooms.get(roomNum).getGuest().getName() + " pays Bill: $" + (rooms.get(roomNum).cost() * rooms.get(roomNum).getDays()));
+        rooms.remove(roomNum);
+        if (rooms.size() != capacity) {
+            setVacancy(true);
+        } else {
+            setVacancy(false);
+        }
+    }
+
+    /**increment the days the motel has been operating
+     * decrement the days left for each guest
+     */
+    public void incrementDays() {
+        this.days += 1;
+        for (int i = 1; i <= capacity; i++) {
+            if (rooms.containsKey(i)) {
+                MotelRoom room = rooms.get(i);
+                room.decrementDays();
+                if(room.getDaysLeft() == 0){
+                    motel.checkOut(i);
+                }
+            }
+        }
+    }
+
+    public int getDays() {
+        return this.days;
+    }
+
     /**
      * Returns the Motel's WaitList
      * @return the Motel's WaitList
@@ -83,12 +116,6 @@ public class RoachMotel implements Subject {
     public LinkedBlockingQueue getWaitList() {
         return list.getPhysicalList();
     }
-
-    /*TEMPORARY METHOD FOR TESTING OBSERVER*/
-    public void removeRoom() {
-        rooms.remove(4);
-        setVacancy(rooms.size() != capacity);
-    } // END TEMP
 
     /**
      * Returns room at given key
@@ -173,38 +200,5 @@ public class RoachMotel implements Subject {
         for (Observer e : localObservers) {
             e.update();
         }
-    }
-
-    /**check out a room
-     * @param roomNum room number to check out
-     */
-    public void checkOut(int roomNum) {
-        System.out.println("Checking out Room " + roomNum + "!" + rooms.get(roomNum).getGuest().getName() + " pays Bill: $" + (rooms.get(roomNum).cost() * rooms.get(roomNum).getDays()));
-        rooms.remove(roomNum);
-        if (rooms.size() != capacity) {
-            setVacancy(true);
-        } else {
-            setVacancy(false);
-        }
-    }
-
-    /**increment the days the motel has been operating
-     * decrement the days left for each guest
-     */
-    public void incrementDays() {
-        this.days += 1;
-        for (int i = 1; i <= capacity; i++) {
-            if (rooms.containsKey(i)) {
-                MotelRoom room = rooms.get(i);
-                room.decrementDays();
-                if(room.getDaysLeft() == 0){
-                    motel.checkOut(i);
-                }
-            }
-        }
-    }
-
-    public int getDays() {
-        return this.days;
     }
 }

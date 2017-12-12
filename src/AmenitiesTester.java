@@ -46,7 +46,7 @@ public class AmenitiesTester {
             System.out.println(motel.getRoom(i).getDescription());
         }
         System.out.println("\n" + motel.getWaitList() + "\n");
-        motel.removeRoom();
+        motel.checkOut(4);
         for (int i = 1; i <= motel.getCapacity(); i++) {
             System.out.println(motel.getRoom(i).getDescription());
         }
