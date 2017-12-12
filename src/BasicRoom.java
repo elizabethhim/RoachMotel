@@ -16,8 +16,8 @@ public class BasicRoom extends MotelRoom{
     public BasicRoom(RoachColony guest, int days) {
         this.guest = guest;
         description = "Room";
-        this.days = days;
-        this.daysLeft = days;
+        super.days = days;
+        super.daysLeft = days;
     }
 
     /**return cost of a room

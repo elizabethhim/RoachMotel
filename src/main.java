@@ -27,6 +27,7 @@ public class main {
             System.out.println("Motel currently has " + motel.getOccupancy() + " guests");
             System.out.println("Day " + motel.getDays());
             System.out.println(motel.getWaitList());
+            System.out.println(motel.getWaitList().size());
             motel.incrementDays();
 
         }
@@ -46,12 +47,13 @@ public class main {
                     Thread.sleep(1000);
                     MotelRoom tempRoom = randomizer.getRandomRoom();
                     if(motel.isVacant()){
-                        motel.checkIn(tempRoom);
                         System.out.println(tempRoom.getGuest().getName() + " has checked in to the hotel");
                         System.out.println(tempRoom.getGuest().getName() + " has " + tempRoom.getDescription());
+                        System.out.println("Staying for " + tempRoom.getDays());
                     } else {
                         System.out.println("No rooms left " + tempRoom.getGuest().getName() + " has been added to waitlist");
                     }
+                    motel.checkIn(tempRoom);
                 } catch (InterruptedException ie)
                 {
                     System.out.println("Scanning...");

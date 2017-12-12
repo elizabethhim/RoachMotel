@@ -13,7 +13,7 @@ public abstract class MotelRoom {
     protected int days;
 
     /**number of days until the guest checks out*/
-    int daysLeft = days;
+    protected int daysLeft = days;
 
     /**return description of room
      * @return description of room
