@@ -37,10 +37,17 @@ public class RoachMotelRandomizer {
      * @return MotelRoom with new amenities
      */
     public MotelRoom getRandomAmenities(MotelRoom guest) {
-        int totalAnemities = (int) (Math.random() * 5);
+        int totalAnemities = (int) (Math.random() * 4);
         HashSet<String> amenities = new HashSet<String>();
         for( int i = 0; i < totalAnemities; i++ ) {
-            amenities.add(this.amenities.get((int) (Math.random() * 4)) );
+            int amenNum = (int) (Math.random() * 3);
+            amenities.add(this.amenities.get(amenNum));
+            if (amenNum == 0) {
+                int randNum = (int)(Math.random() * 2);
+                if (randNum == 0) {
+                    amenities.add("auto refill");
+                }
+            }
         }
         for( String extra: amenities){
             try {
@@ -91,9 +98,7 @@ public class RoachMotelRandomizer {
      */
     public MotelRoom getRandomRoom() {
         int randNum = getRandNum(4) + 1;
-        System.out.println(randNum);
         MotelRoom guest = new BasicRoom(getRandomRoachColony(), randNum );
-        System.out.println(guest.getDescription());
         return getRandomAmenities( guest );
     }
 
