@@ -4,7 +4,6 @@
  */
 import java.util.ArrayList;
 import java.util.HashMap;
-//TODO: add methods, if necessary
 public class RoachMotel implements Subject {
 
     /**an instance of Roach Motel*/
@@ -16,22 +15,22 @@ public class RoachMotel implements Subject {
     /**vacancy condition of Roach Motel*/
     private boolean vacancy;
 
-    /**List of Roach colonies*/
+    /**HashMap linking a room key to a Roach Colony value*/
     private HashMap<Integer, MotelRoom> rooms;
 
     /**number of days since motel opened*/
     private int days = 1;
 
-    /**WaitList if no vacancy*/
+    /**motel's waitlist*/
     private static WaitList list;
 
-    /**List of observers*/
+    /**list of observers*/
     private ArrayList<Observer> observers;
 
-    /**True if state of subject has changed*/
+    /**true if state of subject has changed*/
     private boolean changed;
 
-    /**Mutex for synchronization*/
+    /**mutex for synchronization*/
     private final Object MUTEX = new Object();
 
     /**private constructor of a motel to prevent new motel creation
@@ -47,8 +46,9 @@ public class RoachMotel implements Subject {
         list.setSubject(this);
     }
 
-    /**creates new instances of a Roach Motel
-     * @return an instance of a Roach Motel
+    /**create new motel, if none have been created
+     * otherwise, return a singleton instance of the motel
+     * @return an instance of the Roach Motel
      */
     public static synchronized RoachMotel getMotel() {
         if (motel == null) {
@@ -57,8 +57,7 @@ public class RoachMotel implements Subject {
         return motel;
     }
 
-    /**
-     * Places a RoachColony into the next available room or adds to WaitList if no room is available
+    /**place a RoachColony into the next available room or adds to WaitList if no room is available
      * @param in the RoachColony being admitted to the room or added to WaitList
      */
     public void admitRoom(MotelRoom in) {
@@ -67,14 +66,7 @@ public class RoachMotel implements Subject {
         setVacancy(rooms.size() != capacity);
     }
 
-    /*TEMPORARY METHOD FOR TESTING OBSERVER*/
-    public void removeRoom() {
-        rooms.remove(4);
-        setVacancy(rooms.size() != capacity);
-    } // END TEMP
-
-    /**
-     * Returns room at given key
+    /**return room at given key
      * @param key the key of the room to return
      * @return room at given key
      */
@@ -118,8 +110,8 @@ public class RoachMotel implements Subject {
     public int getOccupancy() {
         return rooms.size();
     }
-    /**
-     * Registers observers to the subject
+
+    /**register observers to the subject
      * @param obj observer to be registered
      */
     @Override
@@ -130,8 +122,7 @@ public class RoachMotel implements Subject {
         }
     }
 
-    /**
-     * Unregisters observers from the subject
+    /**unregister observers from the subject
      * @param obj observer to be unregistered
      */
     @Override
@@ -142,9 +133,7 @@ public class RoachMotel implements Subject {
     }
 
 
-    /**
-     * Notifies all observers of change in subject's state
-     */
+    /**notify all observers of change in subject's state*/
     @Override
     public void notifyObservers() {
         ArrayList<Observer> localObservers = null;

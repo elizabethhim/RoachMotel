@@ -4,6 +4,7 @@
  */
 
 public class Spa extends RoomAmenities {
+
     /**cost of a spa*/
     public static final double COST = 20;
 

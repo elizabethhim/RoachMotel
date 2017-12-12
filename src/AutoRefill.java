@@ -9,7 +9,7 @@ public class AutoRefill extends RoomAmenities {
     /**cost of a automatically refilled food bar*/
     public static final double COST = 5;
 
-    /**add a food bar to a room
+    /**constructor: add a food bar to a room
      * @param roomType the room to add a food bar to
      */
     public AutoRefill(MotelRoom roomType) {

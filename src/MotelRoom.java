@@ -6,7 +6,7 @@ public abstract class MotelRoom {
     /**a description of the room*/
     protected String description;
 
-    /**Guest staying in the room*/
+    /**Roach Colony staying in the room*/
     protected RoachColony guest;
 
     /**number of days the guest will be staying*/
@@ -22,7 +22,7 @@ public abstract class MotelRoom {
         return description;
     }
 
-    /**Return guest staying in the room
+    /**return guest staying in the room
      * @return guest object
      */
     public RoachColony getGuest() {

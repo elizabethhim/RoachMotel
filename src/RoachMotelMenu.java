@@ -1,21 +1,21 @@
+/* Authors: Ricardo Alcaraz, Jacob Olsøn, Elizabeth Him
+   Purpose: This class was created to display menu options to the console without cluttering our main program.
+ */
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/* Authors: Ricardo Alcaraz, Jacob Olsøn, Elizabeth Him
-   Purpose: This class was created to display menu options to the console without cluttering our main program
- */
-
 public class RoachMotelMenu {
 
-    /**String holding the initial menu choices*/
+    /**initial menu choices*/
     private static String initialMenu = "1.Start\n2.Quit";
 
-    /*String holding the running program choices*/
+    /**program choices*/
     private static String programMenu = "1.Next Day\n2.Quit";
 
-    /**Displays Vacancy sign on console output*/
+    /**display Vacancy sign on console output*/
     public static void displayVacancy() {
         ArrayList<String> vacancySign = textReader( "VacancySign.txt" );
         for( int i = 0; i < vacancySign.size(); i++){
@@ -24,7 +24,7 @@ public class RoachMotelMenu {
         System.out.println("");
     }
 
-    /**Displays the roachmotel sign on console output*/
+    /**display the RoachMotel sign on console output*/
     public static void displaySign() {
         ArrayList<String> roachMotelSign = textReader("MotelSign.txt");
         for( int i = 0; i < roachMotelSign.size(); i++){
@@ -33,7 +33,8 @@ public class RoachMotelMenu {
         System.out.println("");
     }
 
-    /**Display the initial menu for our program and grabs a user input
+    /**display the initial menu for our program
+     * and obtain a user input to start or quit program
      * @return user inputted number
      */
     public static int initialMenu() {
@@ -43,7 +44,7 @@ public class RoachMotelMenu {
         return userInput;
     }
 
-    /**Displays a no vacancy sign in the console output*/
+    /**display no vacancy sign in the console output*/
     public static void displayNoVacancy() {
         ArrayList<String> noVacancySign = textReader("NoVacancySign.txt");
         for( int i = 0; i < noVacancySign.size(); i++){
@@ -52,8 +53,8 @@ public class RoachMotelMenu {
         System.out.println("");
     }
 
-    /**Display the main menu for our program and grabs a user input
-     * @return user inputted number
+    /**display the main menu for our program and obtain user input
+     * @return user choice
      */
     public static int mainMenu() {
         if(RoachMotel.getMotel().isVacant()){
@@ -66,9 +67,8 @@ public class RoachMotelMenu {
         return user_input;
     }
 
-    /**
-     * Function to read in text from a file
-     * @param fileName
+    /**function to read in text from a file
+     * @param fileName file name
      * @return ArrayList of Strings of each line of the text document
      */
     private static ArrayList<String> textReader(String fileName) {
@@ -85,7 +85,7 @@ public class RoachMotelMenu {
         return list;
     }
 
-    /** validates user input by ensuring they enter an integer in the appropriate range
+    /**validate user input by ensuring value is in appropriate range
      * @param lowRange the lowest integer the user is allowed to enter
      * @param highRange the highest integer the user is allowed to enter
      * @return the user's valid input

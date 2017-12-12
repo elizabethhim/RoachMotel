@@ -7,7 +7,7 @@ public class FoodBar extends RoomAmenities {
     /**cost of a food bar*/
     public static final double COST = 10;
 
-    /**add a food bar to a room
+    /**constructor: add a food bar to a room
      * @param roomType the room to add a food bar to
      */
     public FoodBar(MotelRoom roomType) {

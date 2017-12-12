@@ -13,11 +13,11 @@ public class RoachColony {
     /**growth rate of the Roach Colony*/
     private double growthRate;
 
-    /**Explicit Constructor for the Roach Colony
+    /**constructor for the Roach Colony
      * Will round growth rate to two decimal places
-     * @param name
-     * @param population
-     * @param growthRate
+     * @param name name of Roach Colony
+     * @param population initial population of Roach Colony
+     * @param growthRate growth rate of Roach Colony
      */
     public RoachColony(String name, int population, double growthRate) {
         this.name = name;

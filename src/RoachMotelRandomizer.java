@@ -1,20 +1,19 @@
-import java.util.*;
-import java.io.*;
-
 /* Authors: Ricardo Alcaraz, Jacob Olsøn, Elizabeth Him
    Purpose: This class creates random inputs for our roach motel main program
  */
 
+import java.util.*;
+import java.io.*;
+
 public class RoachMotelRandomizer {
 
-    /**Holds a list of names to use in our randomizer*/
+    /**list of names to use in our randomizer*/
     private ArrayList<String> names;
 
-    /**Holds the anemities available to the roach colony*/
+    /**list of anemities available to the roach colony*/
     private ArrayList<String> amenities;
 
-    /**Class constructor
-     * When initialized it will read in the names from a text file called names.txt
+    /**constructor: will read in the names from names text file
      */
     public RoachMotelRandomizer() {
         names = textReader("names.txt");
@@ -22,7 +21,7 @@ public class RoachMotelRandomizer {
         amenities = textReader("amenities.txt");
     }
 
-    /**Returns a randomly generated RoachColony
+    /**return randomly generated RoachColony
      * @return RoachColony
      */
     public RoachColony getRandomRoachColony() {
@@ -32,7 +31,7 @@ public class RoachMotelRandomizer {
         return new RoachColony(randName, randPopulation, randGrowth);
     }
 
-    /**Function to generate return a room with random amenities
+    /**generate and return a random room with random amenities
      * @param guest MotelRoom to modify
      * @return MotelRoom with new amenities
      */
@@ -53,7 +52,7 @@ public class RoachMotelRandomizer {
         return guest;
     }
 
-    /**Create a list of Roach Colonies with a random size
+    /**generate and return a list of Roach Colonies with a random size
      * @return roach colony list
      */
     public ArrayList<RoachColony> getRandomGuests() {
@@ -65,7 +64,7 @@ public class RoachMotelRandomizer {
         return colonyList;
     }
 
-    /**Generate a random int from 0 to an upper limit
+    /**generate and return a random int from 0 to an upper limit
      * @param high upper limit to return
      * @return random int within the range specified
      */
@@ -73,7 +72,7 @@ public class RoachMotelRandomizer {
         return (int) (Math.random() * high);
     }
 
-    /**Function to return a random motel room with random amenities
+    /**generate and return a random motel room with random amenities
      * @return motelroom
      */
     public MotelRoom getRandomRoom() {
@@ -81,8 +80,8 @@ public class RoachMotelRandomizer {
         return getRandomAmenities( guest );
     }
 
-    /**Function to read in text from a file
-     * @param fileName
+    /**read in text from a file
+     * @param fileName file name
      * @return ArrayList of Strings of each line of the text document
      */
     private ArrayList<String> textReader(String fileName) {
@@ -98,7 +97,4 @@ public class RoachMotelRandomizer {
         }
         return list;
     }
-
-
-
 }
