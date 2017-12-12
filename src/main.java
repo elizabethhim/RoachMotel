@@ -63,6 +63,7 @@ public class main {
     }
 
 
+    /**Chooses random rooms to throw parties*/
     public static void randParties() {
         int num = randomizer.getRandNum(5) + 1;
         HashSet<Integer> numArray = new HashSet<Integer>();
