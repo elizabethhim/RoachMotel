@@ -65,6 +65,19 @@ public class RoachMotelRandomizer {
         return colonyList;
     }
 
+    /**Create a list of random numbers
+     * May return an empty list occasionally
+     * @return list
+     */
+    public HashSet<Integer> getRandNumArray() {
+        HashSet<Integer> list = new HashSet<>();
+        int randomGuestsLeaving = (int) (Math.random() * RoachMotel.getMotel().getOccupancy() );
+        for(int i = 0; i < RoachMotel.getMotel().getCapacity(); i++){
+            list.add(getRandNum(RoachMotel.getMotel().getCapacity()));
+        }
+        return list;
+    }
+
     /**Generate a random int from 0 to an upper limit
      * @param high upper limit to return
      * @return random int within the range specified
