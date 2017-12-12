@@ -47,9 +47,9 @@ public class main {
                     Thread.sleep(1000);
                     MotelRoom tempRoom = randomizer.getRandomRoom();
                     if(motel.isVacant()){
-                        System.out.println(tempRoom.getGuest().getName() + " has checked in to the hotel");
+                        System.out.println(tempRoom.getGuest() + " has checked in to the hotel");
                         System.out.println(tempRoom.getGuest().getName() + " has " + tempRoom.getDescription());
-                        System.out.println("Staying for " + tempRoom.getDays());
+                        System.out.println("Staying for " + tempRoom.getDays() + " days");
                     } else {
                         System.out.println("No rooms left " + tempRoom.getGuest().getName() + " has been added to waitlist");
                     }
