@@ -23,13 +23,17 @@ public class main {
 
 
         while(user_input != 2) {
-            user_input = RoachMotelMenu.mainMenu();
             System.out.println();
             System.out.println("Day " + motel.getDays());
+            System.out.println();
+            admitAtRandom(randomizer.getRandNum(5));
+            System.out.println();
+            System.out.println("Motel currently has " + motel.getOccupancy() + " guest(s)");
+            System.out.println("Number in waitlist: " + motel.getWaitList().size());
             randParties();
             motel.incrementDays();
             System.out.println();
-
+            user_input = RoachMotelMenu.mainMenu();
         }
 
     }
@@ -79,13 +83,13 @@ public class main {
                 tempPop = room.getGuest().getPopulation();
                 if(room.getDescription().contains("shower")){
                     tempPop = (int) ((double) tempPop * .75);
-                    System.out.println("has shower");
+                    System.out.println("Since room has a shower population is reduced by 25%");
                 } else {
                     tempPop = (int) ((double) tempPop * .5);
-                    System.out.println("no shower");
+                    System.out.println("Since room has a shower population is reduced by 50%");
                 }
                 room.getGuest().setPopulation(tempPop);
-                System.out.println("Motel has sprayed room " + index + motel.getRoom(index).getGuest().getName() + " population has fallen to " + motel.getRoom(index).getGuest().getPopulation());
+                System.out.println("Motel has sprayed room " + index + ". " + motel.getRoom(index).getGuest().getName() + " population has fallen to " + motel.getRoom(index).getGuest().getPopulation());
             }
         }
 
