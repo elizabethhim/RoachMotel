@@ -3,7 +3,6 @@
             Roach Motel and observes the vacancy status
             to fill in empty rooms
  */
-import java.util.AbstractQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class WaitList implements Observer {
@@ -41,11 +40,19 @@ public class WaitList implements Observer {
     }
 
     /**
+     * Returns the WaitList's physical list
+     * @return the WaitList's Queue
+     */
+    public LinkedBlockingQueue getPhysicalList() {
+        return waitlist;
+    }
+
+    /**
      * Receives update from RoachMotel and checks in a RoachColony if there is vacancy
      */
     @Override
     public void update() {
-        if (m.isVacant() && waitlist.size() > 0) m.admitRoom(waitlist.remove());
+        if (m.isVacant() && waitlist.size() > 0) m.checkIn(waitlist.remove());
     }
 
     /**

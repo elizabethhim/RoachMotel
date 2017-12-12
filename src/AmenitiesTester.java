@@ -35,19 +35,21 @@ public class AmenitiesTester {
         MotelRoom room5 = room2;
         MotelRoom room6 = room1;
         MotelRoom room7 = room2;
-        motel.admitRoom(room1);
-        motel.admitRoom(room2);
-        motel.admitRoom(room3);
-        motel.admitRoom(room4);
-        motel.admitRoom(room5);
-        motel.admitRoom(room6);
-        motel.admitRoom(room7);
-        for (int i = 0; i < motel.getCapacity(); i++) {
+        motel.checkIn(room1);
+        motel.checkIn(room2);
+        motel.checkIn(room3);
+        motel.checkIn(room4);
+        motel.checkIn(room5);
+        motel.checkIn(room6);
+        motel.checkIn(room7);
+        for (int i = 1; i <= motel.getCapacity(); i++) {
             System.out.println(motel.getRoom(i).getDescription());
         }
+        System.out.println("\n" + motel.getWaitList() + "\n");
         motel.removeRoom();
-        for (int i = 0; i < motel.getCapacity(); i++) {
+        for (int i = 1; i <= motel.getCapacity(); i++) {
             System.out.println(motel.getRoom(i).getDescription());
         }
+        System.out.println("\n" + motel.getWaitList());
     }
 }
