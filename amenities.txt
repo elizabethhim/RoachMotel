@@ -1,0 +1,4 @@
+food bar
+auto refill
+spa
+shower

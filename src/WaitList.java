@@ -45,7 +45,7 @@ public class WaitList implements Observer {
      */
     @Override
     public void update() {
-        if (m.getVacancy() && waitlist.size() > 0) m.admitRoom(waitlist.remove());
+        if (m.isVacant() && waitlist.size() > 0) m.admitRoom(waitlist.remove());
     }
 
     /**

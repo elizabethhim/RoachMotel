@@ -96,7 +96,7 @@ public class RoachMotel implements Subject {
     /**return vacancy condition of Roach Motel
      * @return vacancy condition of Roach Motel
      */
-    public boolean getVacancy() {
+    public boolean isVacant() {
         return vacancy;
     }
 
@@ -109,6 +109,12 @@ public class RoachMotel implements Subject {
         notifyObservers();
     }
 
+    /**return number of occupants currently staying
+     * @return number of occupants
+     */
+    public int getOccupancy() {
+        return rooms.size();
+    }
     /**
      * Registers observers to the subject
      * @param obj observer to be registered

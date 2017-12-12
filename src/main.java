@@ -8,7 +8,29 @@
  */
 
 public class main {
+
     public static void main(String[] args) {
-        System.out.println("Hello World");
+        RoachMotelRandomizer randomizer = new RoachMotelRandomizer();
+        for( int i = 0; i < 5; i++) {
+            System.out.println( randomizer.getRandomRoachColony() );
+        }
+        for(int i = 0; i < 10; i++) {
+            System.out.println(randomizer.getRandomRoom().getDescription());
+        }
+        RoachMotel motel = RoachMotel.getMotel();
+        int user_input = RoachMotelMenu.initialMenu();
+        while(user_input == 1) {
+            user_input = RoachMotelMenu.mainMenu();
+            motel.admitRoom(randomizer.getRandomRoom());
+            System.out.println(motel.getOccupancy());
+            System.out.flush();
+        }
+
     }
+
+
+
+
+
 }
+
