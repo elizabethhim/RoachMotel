@@ -21,6 +21,9 @@ public class RoachMotel implements Subject {
     /**List of Roach colonies*/
     private HashMap<Integer, MotelRoom> rooms;
 
+    /**number of days since motel opened*/
+    private int days = 1;
+
     /**WaitList if no vacancy*/
     private static WaitList list;
 
@@ -169,6 +172,32 @@ public class RoachMotel implements Subject {
         }
         for (Observer e : localObservers) {
             e.update();
+        }
+    }
+
+    /**check out a room
+     * @param roomNum room number to check out
+     */
+    public void checkOut(int roomNum) {
+        System.out.println("Checking out Room " + roomNum + "! Bill: $" + (rooms.get(roomNum).cost() * rooms.get(roomNum).getDays());
+        rooms.remove(roomNum);
+        if (rooms.size() != capacity) {
+            setVacancy(true);
+        } else {
+            setVacancy(false);
+        }
+    }
+
+    /**increment the days the motel has been operating
+     * decrement the days left for each guest
+     */
+    public void incrementDays() {
+        this.days += 1;
+        for (int i = 1; i <= capacity; i++) {
+            if (rooms.containsKey(i)) {
+                MotelRoom room = rooms.get(i);
+                room.decrementDays();
+            }
         }
     }
 }
